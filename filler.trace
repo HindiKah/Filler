@@ -1,5 +1,6 @@
-seed = 1909
-O: error on input
+seed = 3617
+O: timedout
+X: error on input
 resources/players/hcao.filler won
 Score:
-1AGAINST1
+1AGAINST31
