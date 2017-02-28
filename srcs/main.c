@@ -2,28 +2,24 @@
 
 void		print(int x, int y)
 {
-	ft_putstr(ft_itoa(y));
 	ft_putstr_fd(ft_itoa(y), 2);
-	ft_putchar(' ');
 	ft_putchar_fd(' ', 2);
-	ft_putstr(ft_itoa(x));
 	ft_putstr_fd(ft_itoa(x), 2);
 	ft_putchar_fd('\n', 2);
-	ft_putchar('\n');
 }
 int			main(int argc, const char *argv[])
 {
-	char		*line;
-	int			i = 0;
+	char				*line;
+	static t_map		*map;
 
-while (get_next_line(0, &line) > 0)
+	if (!map)
+		map = init_playernmap(line, map);
+	//display_map(map);
+while ((get_next_line(0, &line)) > 0)
 	{
-		if (i == 0)
-		{
-			ft_putstr_fd("back in main", 2);
-			print(2, 8);
-			i++;
-		}
+			ft_putstr_fd("\t\t\t", 2);
+			ft_putstr_fd(line, 2);
+			ft_putstr_fd("\n", 2);
 	}
 	return 0;
 }

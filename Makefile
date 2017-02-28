@@ -3,6 +3,8 @@ NAME=ybenoit
 
 SRCS_DIR=srcs
 SRC_BASE=main.c\
+		 parsing.c\
+		 testing.c
 
 C_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE))
 O_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE:.c=.o))
