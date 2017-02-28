@@ -6,7 +6,7 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/26 16:13:30 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/02/26 18:11:29 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/02/28 11:13:53 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ typedef struct	s_piece
 }				t_piece;
 
 t_map			*init_playernmap(char *line, t_map *map);
-void			init_intab(t_map *map);
+void			init_intab(char *line, t_map *map);
+int				*init_line(char *line, int *l, int w);
 
 //TESTING FUNCTION
 void	display_map(t_map *map);

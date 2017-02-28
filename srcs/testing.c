@@ -5,10 +5,6 @@ void		display_map(t_map *map)
 	int y = 0;
 	int x = 0;
 
-		ft_putchar_fd('\n', 2);
-		ft_putchar_fd(map->tab[0][0], 2);
-		ft_putchar_fd('\n', 2);
-		ft_putchar_fd('\n', 2);
 	while (y < map->h)
 	{
 		x = 0;
@@ -20,4 +16,5 @@ void		display_map(t_map *map)
 		ft_putchar_fd('\n', 2);
 		y++;
 	}
+			sleep(55555);
 }

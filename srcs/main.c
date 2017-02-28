@@ -12,14 +12,11 @@ int			main(int argc, const char *argv[])
 	char				*line;
 	static t_map		*map;
 
-	if (!map)
 		map = init_playernmap(line, map);
-	//display_map(map);
-while ((get_next_line(0, &line)) > 0)
-	{
-			ft_putstr_fd("\t\t\t", 2);
-			ft_putstr_fd(line, 2);
-			ft_putstr_fd("\n", 2);
-	}
+		sleep(1);
+		display_map(map);
+		//if (line[0] = 'P' && line[1] == 'i')
+		//	init_piece(map);
+		//print_coord(map);
 	return 0;
 }
