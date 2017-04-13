@@ -25,12 +25,10 @@ int			main(int argc, const char *argv[])
 	map = init_upndown(map);
 	while (get_next_line(0, &line) > 0)
 	{
-		//debug(line);
 		if (line[0] == 'P' && line[1] == 'l')
 		{
 			map = maj_tab(&line, map);
 			check_touch(map);
-			display_map(map);
 		}
 		if (line[0] == 'P' && line[1] == 'i')
 		{
@@ -42,8 +40,6 @@ int			main(int argc, const char *argv[])
 				map = init_touch(map);
 				nearest_to(map, piece, give_position(map));
 			}
-			//print_piece(piece);
-			display_map(map);
 			print(map->zone->y, map->zone->x);
 		}
 	}
@@ -115,7 +111,6 @@ void		print_tab(int h, int w, int **tab)
 				ft_putstr_fd(ft_itoa(tab[y][x]), 2);
 			else
 				ft_putstr_fd("2", 2);
-			//ft_putstr_fd("  ", 2);
 			x++;
 		}
 		ft_putstr_fd("\n", 2);

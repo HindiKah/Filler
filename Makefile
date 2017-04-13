@@ -40,6 +40,6 @@ clean_main:
 	rm -rf *.o
 	rm -rf $(NAME)
 
-remain: clean_main all
+remain: clean_main ybenoit
 
 .PHONY: clean all re fclean

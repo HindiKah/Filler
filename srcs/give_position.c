@@ -34,13 +34,16 @@ t_coord			give_start_position(t_map *map)
 	{
 		ret.y = map->h - 1;
 		if (ret.x < 0)
-			ret.x = map->w /2;
+			ret.x = 0;
+			ret.x = map->tab[map->h][0] == -map->p ?
+				map->w : 0;
 	}
 	else if (map->up_down == -1 && (ret.x = check_horiz_end(0, map)) != 0)
 	{
 		ret.y = 0;
 		if (ret.x < 0)
-			ret.x = map->w / 2;
+			ret.x = map->tab[0][map->w] == -map->p ?
+				0 : map->w;
 	}
 	else
 		return (where_to_go(map));

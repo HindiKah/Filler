@@ -65,12 +65,6 @@ t_map			*check_zone(t_map *map, t_piece *piece, t_coord coord)
 				map->zone->y = y1;
 				return (map);
 			}
-				/*debug("y/x =");
-				ft_putstr_fd(ft_itoa(y1), 2);
-				ft_putstr_fd("/", 2);
-				ft_putstr_fd(ft_itoa(x1), 2);
-				ft_putstr_fd("\n", 2);
-				*/
 			x1++;
 		}
 		y1++;

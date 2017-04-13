@@ -9,8 +9,6 @@ int touch_horiz(int line,  t_map *map)
 		return (666);
 	while (x < map->w)
 	{
-		debug(ft_itoa(x));
-		debug(ft_itoa(line));
 		if (map->tab[line][x] == map->p)
 			return (1);
 		x++;

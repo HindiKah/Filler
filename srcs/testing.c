@@ -2,12 +2,6 @@
 
 int			can_iplace(t_map *map, t_piece *piece, t_coord coord)
 {
-	/*debug("is not out");
-	debug(ft_itoa(is_not_out(map, piece, coord)));
-	debug("p can enter");
-	debug(ft_itoa(p_can_enter(map, piece, coord)));
-	debug("add_tab_value");
-	debug(ft_itoa(add_tab_value(map, piece, coord)));*/
 	if (is_not_out(map, piece, coord))
 	{
 		if (p_can_enter(map, piece, coord) && add_tab_value(map, piece, coord) == 1)
