@@ -1,75 +1,104 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/26 16:13:20 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/02/28 11:31:32 by ybenoit          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/filler.h"
 
-t_map		*init_playernmap(char *line, t_map *map)
+int			**init_intab(int x, int y, int **tab, char **line);
+t_coord		*init_home(int y, int x);
+t_map		*check_home(t_map *map);
+
+t_map		*init_playernmap(char **line, t_map *map)
 {
 	map = (t_map*)malloc(sizeof(t_map));
-	if (!map)
-		exit(0);
-	while ((get_next_line(0, &line)) < 0)
+	get_next_line(0, line);
+	while (!ft_strstr(*line, "ybenoit"))
 	{
-		if (ft_strstr(line, "ybe"))
-			break;
+		get_next_line(0, line);
+		sleep(1);
 	}
-	if (line[10] == '1')
+	if (ft_strstr(*line, "p1"))
+	{
+		map->p = 1;
 		map->player = 'o';
+	}
 	else
+	{
+		map->p = -1;
 		map->player = 'x';
-	while (!ft_strstr(line, "Plateau"))
-		get_next_line(0, &line);
-	ft_putstr_fd(line, 2);
-	map->h = ft_atoi(line + 7);
-	map->w = ft_atoi(line + (ft_num_count(map->h) + 8));
-	init_intab(line, map);
+	}
+	while (!ft_strstr(*line, "Plateau"))
+		get_next_line(0, line);
+	map = init_touch(map);
+	map->h = ft_atoi(*line + 7);
+	map->w = ft_atoi(*line + ft_num_count(map->h) + 8);
+	map->tab = init_intab(map->w, map->h, map->tab, line);
+	map->zone = (t_coord*)malloc(sizeof(t_coord));
+	map->zone->x = -1;
 	return (map);
 }
 
-void		init_intab(char *line, t_map *map)
+int			**init_intab(int x, int y, int **tab, char **line)
 {
 	int		w;
 	int		h;
 
 	h = 0;
-	map->tab = (int**)malloc(sizeof(int*) * map->h);
-	if (!map->tab)
-		exit(0);
-	ft_putchar_fd('\n', 2);
-	while (line[0] != ' ')
-		get_next_line(0, &line);
-	while ((get_next_line(0, &line)) > 0)
+	get_next_line(0, line);
+	tab = (int**)malloc(sizeof(int*) * (y));
+	while (h < y)
 	{
 		w = 0;
-		map->tab[h] = (int*)malloc(sizeof(int) * map->w);
-		if (!map->tab[h])
-			exit(0);
-		init_line(line, map->tab[h], map->w);
+		get_next_line(0, line);
+		tab[h] = (int*)malloc(sizeof(int) * x);
+		while (w < x)
+		{
+			if (line[0][w + 4] == 'o' || line[0][w + 4] == 'O')
+				tab[h][w] = 1;
+			else if (line[0][w + 4] == 'x' ||
+					line[0][w + 4]  == 'X')
+				tab[h][w] = -1;
+			else
+				tab[h][w] = 0;
+			w++;
+		}
 		h++;
-		if (h == map->h)
-			break;
 	}
+	return (tab);
 }
 
-int			*init_line(char *line, int *l, int w)
+t_piece			*init_piece(char **line, t_piece *piece)
 {
-	int i;
+	int		x;
+	int		y;
 
-	i = 5;
-	while ((i - 4) < w)
+	y = 0;
+	if (piece)
+		free(piece);
+	piece = (t_piece*)malloc(sizeof(t_piece));
+	piece->value = 0;
+	while (!ft_strstr(*line, "Pi"))
+		get_next_line(0, line);
+	piece->h = ft_atoi(*line + 6);
+	piece->w = ft_atoi(*line + 6 + ft_num_count(piece->h));
+	piece->form = (int**)malloc(sizeof(int*) * piece->h);
+	while (y < piece->h)
 	{
-		l[i - 4] = (line[i] == '.') ? 0 : ((line[i] == 'X' || line[i] == 'x') 
-				? 2 : 1);
-		i++;
+		x = 0;
+		get_next_line(0, line);
+		piece->form[y] = (int*)malloc(sizeof(int) * piece->w);
+		while (x < piece->w)
+		{
+			piece->form[y][x] = (line[0][x] == '*') ? 1 : 0;
+			piece->value += piece->form[y][x];
+			x++;
+		}
+		y++;
 	}
-		return (l);
+	return (piece);
 }
+
+t_map			*maj_tab(char **line, t_map *map)
+{
+	if (map->tab)
+		free(map->tab);
+	map->tab = init_intab(map->w, map->h, map->tab, line);
+	return (map);
+}
+

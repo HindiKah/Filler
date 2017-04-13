@@ -115,7 +115,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rc  $(NAME) $(OBJS)
 	ranlib $(NAME)
-	echo "Compiling & indexing" [ $(NAME) ] $(SUCCESS)
 
 %.o: %.c $(INCLUDES)/libft.h
 	@$(CC) -c -o $@ $< -I $(INCLUDES)
@@ -123,7 +122,6 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -f $(OBJS)
-	@echo "Cleaning" [ $(NAME) ] "..." $(OK)
 
 fclean: clean
 	rm -f $(NAME)

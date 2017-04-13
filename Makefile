@@ -4,7 +4,13 @@ NAME=ybenoit
 SRCS_DIR=srcs
 SRC_BASE=main.c\
 		 parsing.c\
-		 testing.c
+		 tab_fun.c\
+		 testing.c\
+		 analyse.c\
+		 checker_line.c\
+		 checker_line2.c\
+		 analyse_map.c\
+		 give_position.c
 
 C_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE))
 O_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE:.c=.o))
