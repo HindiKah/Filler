@@ -1,6 +1,4 @@
-seed = 7195
-X: error on input
-../ybenoit: Segfault at 160
-players/carli.filler won
+seed = 4088
+../ybenoit won
 Score:
-188AGAINST160
+152AGAINST232

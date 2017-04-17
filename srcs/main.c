@@ -2,7 +2,6 @@
 
 void		print_tab(int h, int w, int **tab);
 void		print_piece(t_piece *piece);
-void		display_map(t_map *map);
 
 void		print(int y, int x)
 {
@@ -23,6 +22,7 @@ int			main(int argc, const char *argv[])
 
 	map = init_playernmap(&line, map);
 	map = init_upndown(map);
+			display_map(map);
 	while (get_next_line(0, &line) > 0)
 	{
 		if (line[0] == 'P' && line[1] == 'l')
@@ -35,12 +35,8 @@ int			main(int argc, const char *argv[])
 			piece = init_piece(&line, piece);
 			piece->p = map->p;
 			map = nearest_to(map, piece, give_position(map));
-			if (!can_iplace(map, piece, *map->zone))
-			{
-				map = init_touch(map);
-				nearest_to(map, piece, give_position(map));
-			}
 			print(map->zone->y, map->zone->x);
+			//sleep(1);
 		}
 	}
 
@@ -71,6 +67,8 @@ void		display_map(t_map *map)
 	print_tab(map->h, map->w, map->tab);
 	debug("map->p = ");
 	debug(ft_itoa(map->p));
+	debug("map->up_down = ");
+	debug(ft_itoa(map->up_down));
 	debug("map h/w ");
 	ft_putstr_fd(ft_itoa(map->h), 2);
 	ft_putstr_fd("/", 2);

@@ -18,16 +18,22 @@ t_direction	neighbour(t_coord coord, t_map *map)
 
 	x = coord.x;
 	y = coord.y;
-	ret.x = 0;
-	ret.y = 0;
+	ret.xr = 0;
+	ret.xl = 0;
+	ret.yu = 0;
+	ret.yd = 0;
 	if (x + 1 < map->w)
-		ret.x += (map->tab[y][x + 1] == map->p) ? 1 : 0;
+		ret.xr += (map->tab[y][x + 1] == map->p || !map->tab[y]
+				[x + 1]) ? 1 : 0;
 	if (x - 1 >= 0)
-		ret.x -= (map->tab[y][x - 1] == map->p) ? 1 : 0;
+		ret.xl += (map->tab[y][x - 1] == map->p || !map->tab[y]
+				[x - 1]) ? 1 : 0;
 	if (y + 1 < map->h)
-		ret.y += (map->tab[y + 1][x] == map->p) ? 1 : 0;
+		ret.yd += (map->tab[y + 1][x] == map->p || !map->tab[y + 1]
+				[x]) ? 1 : 0;
 	if (y - 1 >= 0)
-		ret.y -= (map->tab[y - 1][x] == map->p) ? 1 : 0;
+		ret.yu += (map->tab[y - 1][x] == map->p || !map->tab[y - 1]
+				[x]) ? 1 : 0;
 	return (ret);
 }
 

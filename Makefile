@@ -10,7 +10,8 @@ SRC_BASE=main.c\
 		 checker_line.c\
 		 checker_line2.c\
 		 analyse_map.c\
-		 give_position.c
+		 give_position.c\
+		 search_way.c
 
 C_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE))
 O_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE:.c=.o))

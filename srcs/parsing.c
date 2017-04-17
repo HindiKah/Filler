@@ -30,7 +30,8 @@ t_map		*init_playernmap(char **line, t_map *map)
 	map->w = ft_atoi(*line + ft_num_count(map->h) + 8);
 	map->tab = init_intab(map->w, map->h, map->tab, line);
 	map->zone = (t_coord*)malloc(sizeof(t_coord));
-	map->zone->x = -1;
+	map->zone->x = map->w / 2;
+	map->zone->y = map->h / 2;
 	return (map);
 }
 

@@ -11,8 +11,10 @@ typedef struct	s_coord
 
 typedef struct s_direction
 {
-	int			x;
-	int			y;
+	int			xr;
+	int			xl;
+	int			yd;
+	int			yu;
 }				t_direction;
 
 	typedef struct	s_map
@@ -66,10 +68,11 @@ int				check_vert_end(int c, t_map *map);
 t_map			*check_touch(t_map *map);
 int				touch_horiz(int c, t_map *map);
 int				touch_vert(int c, t_map *map);
-
-
+int				can_i_go_up(t_coord start, int line, t_map *map, int p);
+int				can_i_go_lr(t_coord start, int col, t_map *map, int p);
 
 
 
 void			debug(char *str);
+void			display_map(t_map *map);
 #endif
