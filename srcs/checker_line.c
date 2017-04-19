@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_line.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/19 17:01:35 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/04/19 17:04:30 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/filler.h"
 
-int			check_horiz_start(int line,  t_map *map)
+int			check_horiz_start(int line, t_map *map)
 {
 	int x;
 	int ret;
@@ -14,7 +26,7 @@ int			check_horiz_start(int line,  t_map *map)
 		if (x - 1 >= 0 && !ret)
 		{
 			if (!map->tab[line][x - 1] && map->tab[line][x] == -map->p)
-			ret = x - 1;
+				ret = x - 1;
 		}
 		else if (!map->tab[line][x])
 			ret = -1;
@@ -23,7 +35,7 @@ int			check_horiz_start(int line,  t_map *map)
 	return (ret);
 }
 
-int			check_vert_start(int col,  t_map *map)
+int			check_vert_start(int col, t_map *map)
 {
 	int y;
 	int ret;
@@ -37,7 +49,7 @@ int			check_vert_start(int col,  t_map *map)
 		if (y - 1 >= 0 && !ret)
 		{
 			if (!map->tab[y - 1][col] && map->tab[y][col] == -map->p)
-			ret = y - 1;
+				ret = y - 1;
 		}
 		else if (!map->tab[y][col])
 			ret = -1;
@@ -46,7 +58,7 @@ int			check_vert_start(int col,  t_map *map)
 	return (ret);
 }
 
-int			check_horiz_end(int line,  t_map *map)
+int			check_horiz_end(int line, t_map *map)
 {
 	int x;
 	int ret;
@@ -60,7 +72,7 @@ int			check_horiz_end(int line,  t_map *map)
 		if (x + 1 < map->w && !ret)
 		{
 			if (!map->tab[line][x + 1] && map->tab[line][x] == -map->p)
-			ret = x + 1;
+				ret = x + 1;
 		}
 		else if (!map->tab[line][x])
 			ret = -1;
@@ -69,7 +81,7 @@ int			check_horiz_end(int line,  t_map *map)
 	return (ret);
 }
 
-int			check_vert_end(int col,  t_map *map)
+int			check_vert_end(int col, t_map *map)
 {
 	int y;
 	int ret;
@@ -83,7 +95,7 @@ int			check_vert_end(int col,  t_map *map)
 		if (y + 1 < map->h && !ret)
 		{
 			if (!map->tab[y + 1][col] && map->tab[y][col] == -map->p)
-			ret = y + 1;
+				ret = y + 1;
 		}
 		else if (!map->tab[y][col])
 			ret = -1;

@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   testing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/19 17:14:02 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/04/19 17:14:23 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/filler.h"
 
 int			can_iplace(t_map *map, t_piece *piece, t_coord coord)
 {
 	if (is_not_out(map, piece, coord))
 	{
-		if (p_can_enter(map, piece, coord) && add_tab_value(map, piece, coord) == 1)
-		return (1);
+		if (p_can_enter(map, piece, coord) &&
+				add_tab_value(map, piece, coord) == 1)
+			return (1);
 	}
 	return (0);
 }

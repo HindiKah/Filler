@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   analyse_map.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/19 17:01:03 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/04/19 17:01:13 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/filler.h"
 
 t_map		*init_upndown(t_map *map)
@@ -26,7 +38,7 @@ t_map		*init_upndown(t_map *map)
 	return (map);
 }
 
-t_map			*init_rightnleft(t_map *map)
+t_map		*init_rightnleft(t_map *map)
 {
 	int w;
 	int h;

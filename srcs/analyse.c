@@ -1,4 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   analyse.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/19 16:38:38 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/04/19 16:47:09 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/filler.h"
+
+void			init_check_coord(t_coord *begin, t_coord *end, t_piece *piece,
+					t_coord coord);
 
 t_map			*nearest_to(t_map *map, t_piece *piece, t_coord dest)
 {
@@ -11,9 +26,9 @@ t_map			*nearest_to(t_map *map, t_piece *piece, t_coord dest)
 
 t_map			*go_to_vs(t_map *map, t_piece *piece, t_coord coord)
 {
-	int x;
-	int y;
-	t_coord dest;
+	int			x;
+	int			y;
+	t_coord		dest;
 
 	y = 0;
 	map->zone->x = -1;
@@ -42,33 +57,37 @@ int				calc_prox(t_coord c1, t_coord c2)
 
 t_map			*check_zone(t_map *map, t_piece *piece, t_coord coord)
 {
-	int		x1;
-	int		x2;
-	int		y1;
-	int		y2;
-	t_coord ret;
+	t_coord	start;
+	t_coord	end;
+	t_coord	ret;
 
-	x1 = coord.x - (piece->w - 1) >= 0 ? coord.x - (piece->w - 1): 0 ;
-	y1 = coord.y - (piece->h - 1) >= 0 ? coord.y - (piece->h - 1): 0 ;
-	x2 = coord.x + (piece->w - 1);
-	y2 = coord.y + (piece->h - 1);
-	while (y1 <= y2)
+	init_check_coord(&start, &end, piece, coord);
+	while (start.y <= end.y)
 	{
-		x1 = coord.x - (piece->w - 1);
-		while (x1 <= x2)
+		start.x = coord.x - (piece->w - 1);
+		while (start.x <= end.x)
 		{
-			ret.x = x1;
-			ret.y = y1;
+			ret.x = start.x;
+			ret.y = start.y;
 			if (can_iplace(map, piece, ret) == 1)
 			{
-				map->zone->x = x1;
-				map->zone->y = y1;
+				map->zone->x = start.x;
+				map->zone->y = start.y;
 				return (map);
 			}
-			x1++;
+			start.x++;
 		}
-		y1++;
+		start.y++;
 	}
 	ret.x = -1;
 	return (map);
+}
+
+void			init_check_coord(t_coord *begin, t_coord *end, t_piece *piece,
+		t_coord coord)
+{
+	begin->x = coord.x - (piece->w - 1) >= 0 ? coord.x - (piece->w - 1) : 0;
+	begin->y = coord.y - (piece->h - 1) >= 0 ? coord.y - (piece->h - 1) : 0;
+	end->x = coord.x + (piece->w - 1);
+	end->y = coord.y + (piece->h - 1);
 }

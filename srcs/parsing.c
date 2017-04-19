@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/19 17:05:22 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/04/19 17:13:01 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/filler.h"
 
 int			**init_intab(int x, int y, int **tab, char **line);
 t_coord		*init_home(int y, int x);
 t_map		*check_home(t_map *map);
+t_map		*init_map_param(t_map *map, char **line);
 
 t_map		*init_playernmap(char **line, t_map *map)
 {
@@ -26,6 +39,12 @@ t_map		*init_playernmap(char **line, t_map *map)
 	while (!ft_strstr(*line, "Plateau"))
 		get_next_line(0, line);
 	map = init_touch(map);
+	map = init_map_param(map, line);
+	return (map);
+}
+
+t_map		*init_map_param(t_map *map, char **line)
+{
 	map->h = ft_atoi(*line + 7);
 	map->w = ft_atoi(*line + ft_num_count(map->h) + 8);
 	map->tab = init_intab(map->w, map->h, map->tab, line);
@@ -52,8 +71,7 @@ int			**init_intab(int x, int y, int **tab, char **line)
 		{
 			if (line[0][w + 4] == 'o' || line[0][w + 4] == 'O')
 				tab[h][w] = 1;
-			else if (line[0][w + 4] == 'x' ||
-					line[0][w + 4]  == 'X')
+			else if (line[0][w + 4] == 'x' || line[0][w + 4] == 'X')
 				tab[h][w] = -1;
 			else
 				tab[h][w] = 0;
@@ -64,18 +82,15 @@ int			**init_intab(int x, int y, int **tab, char **line)
 	return (tab);
 }
 
-t_piece			*init_piece(char **line, t_piece *piece)
+t_piece		*init_piece(char **line, t_piece *piece)
 {
 	int		x;
 	int		y;
 
 	y = 0;
-	if (piece)
-		free(piece);
-	piece = (t_piece*)malloc(sizeof(t_piece));
+	if (!piece)
+		piece = (t_piece*)malloc(sizeof(t_piece));
 	piece->value = 0;
-	while (!ft_strstr(*line, "Pi"))
-		get_next_line(0, line);
 	piece->h = ft_atoi(*line + 6);
 	piece->w = ft_atoi(*line + 6 + ft_num_count(piece->h));
 	piece->form = (int**)malloc(sizeof(int*) * piece->h);
@@ -95,11 +110,10 @@ t_piece			*init_piece(char **line, t_piece *piece)
 	return (piece);
 }
 
-t_map			*maj_tab(char **line, t_map *map)
+t_map		*maj_tab(char **line, t_map *map)
 {
 	if (map->tab)
 		free(map->tab);
 	map->tab = init_intab(map->w, map->h, map->tab, line);
 	return (map);
 }
-
