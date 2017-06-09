@@ -24,12 +24,13 @@ void		print(int y, int x)
 	ft_putchar('\n');
 }
 
-int			main(int argc, const char *argv[])
+int			main(void)
 {
 	char		*line;
 	t_map		*map;
 	t_piece		*piece;
 
+	map = NULL;
 	map = init_playernmap(&line, map);
 	map = init_upndown(map);
 	while (get_next_line(0, &line) > 0)

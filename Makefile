@@ -1,6 +1,8 @@
 CC=gcc
 NAME=ybenoit
 
+FLAGS= -Wall -Wextra -Werror
+
 SRCS_DIR=srcs
 SRC_BASE=main.c\
 		 parsing.c\
@@ -22,7 +24,7 @@ $(NAME): obj
 	$(CC) -o $(NAME) ./*.o ./libft/libft.a
 
 obj: lib
-	$(CC) -c $(C_FILE) ./includes/filler.h
+	$(CC) -c $(FLAGS) $(C_FILE) ./includes/filler.h
 
 lib:
 	make -C libft all 

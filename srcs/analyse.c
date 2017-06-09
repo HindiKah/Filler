@@ -17,9 +17,6 @@ void			init_check_coord(t_coord *begin, t_coord *end, t_piece *piece,
 
 t_map			*nearest_to(t_map *map, t_piece *piece, t_coord dest)
 {
-	int			v;
-
-	v = map->p;
 	map = go_to_vs(map, piece, dest);
 	return (map);
 }

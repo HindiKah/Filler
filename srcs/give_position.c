@@ -77,10 +77,15 @@ t_coord			where_to_go(t_map *map)
 		return (position_up(map));
 	else if (map->up_down == -1 && map->touchy1)
 		return (position_down(map));
+	else if (map->up_down == -1)
+	{
+		ret.x = 0;
+		ret.y = 0;;
+	}
 	else
 	{
-		ret.x = map->w / 2;
-		ret.y = map->h / 2;
+		ret.x = map->w - 1;
+		ret.y = map->h - 1;
 	}
 	return (ret);
 }
@@ -89,6 +94,8 @@ t_coord			position_up(t_map *map)
 {
 	t_coord		ret;
 
+	ret.x = ((map->p == 1 && map->w < 50) || map->w > 50) ? map->w - 1: 0;
+	ret.y = ((map->p == 1 && map->w < 50) || map->w > 50) ? map->h - 1: 0;
 	if (!map->touchy1 && can_i_go_up(*map->zone,
 				0, map, 0))
 	{
@@ -110,6 +117,8 @@ t_coord			position_down(t_map *map)
 {
 	t_coord		ret;
 
+	ret.x = ((map->p == 1 && map->w < 50) || map->w > 50) ? 0 : map->w - 1;
+	ret.y = ((map->p == 1 && map->w < 50) || map->w > 50) ? 0 : map->h - 1;
 	if (!map->touchy2 && can_i_go_up(*map->zone,
 				map->h - 1, map, 0))
 	{

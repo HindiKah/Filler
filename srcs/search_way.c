@@ -17,9 +17,7 @@ int			else_lr(t_coord start, int line, t_map *map, int p);
 
 int			can_i_go_up(t_coord start, int line, t_map *map, int p)
 {
-	int			x;
 	int			dir;
-	t_direction	n;
 
 	dir = (line - start.y > 0) ? -1 : 1;
 	if (start.y == line)
@@ -28,7 +26,6 @@ int			can_i_go_up(t_coord start, int line, t_map *map, int p)
 		return (0);
 	else
 		return (else_up(start, line, map, p));
-	return (0);
 }
 
 int			else_up(t_coord start, int line, t_map *map, int p)
@@ -62,10 +59,7 @@ int			else_up(t_coord start, int line, t_map *map, int p)
 
 int			can_i_go_lr(t_coord start, int col, t_map *map, int p)
 {
-	int			y;
 	int			dir;
-	t_coord		tmp;
-	t_direction	n;
 
 	dir = (col - start.x > 0) ? -1 : 1;
 	if (start.x == col)
@@ -82,7 +76,7 @@ int			else_lr(t_coord start, int col, t_map *map, int p)
 	t_direction	n;
 
 	dir = (col - start.x > 0) ? -1 : 1;
-	n = neighbour(tmp, map);
+	n = neighbour(start, map);
 	if ((n.xl == 1 && dir == -1) || (n.xr == 1 && dir == 1))
 	{
 		tmp.x = start.x + dir;
