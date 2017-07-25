@@ -6,16 +6,11 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 16:32:39 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/04/19 16:38:33 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/06/16 02:24:36 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
-
-t_coord			where_to_go(t_map *map);
-t_coord			give_start_position(t_map *map);
-t_coord			position_up(t_map *map);
-t_coord			position_down(t_map *map);
 
 t_coord			give_position(t_map *map)
 {
@@ -79,13 +74,13 @@ t_coord			where_to_go(t_map *map)
 		return (position_down(map));
 	else if (map->up_down == -1)
 	{
-		ret.x = 0;
-		ret.y = 0;;
+		ret.x = (!map->touchy1) ? 0 : map->w - 1;
+		ret.y = (!map->touchy1) ? 0 : map->h / 2;
 	}
 	else
 	{
-		ret.x = map->w - 1;
-		ret.y = map->h - 1;
+		ret.x = (!map->touchy2) ? map->w - 1 : 0;
+		ret.y = (!map->touchy2) ? map->h - 1 : map->h / 2;
 	}
 	return (ret);
 }
@@ -94,13 +89,13 @@ t_coord			position_up(t_map *map)
 {
 	t_coord		ret;
 
-	ret.x = ((map->p == 1 && map->w < 50) || map->w > 50) ? map->w - 1: 0;
-	ret.y = ((map->p == 1 && map->w < 50) || map->w > 50) ? map->h - 1: 0;
+	ret.x = ((map->p == 1 && map->w < 50) || map->w > 50) ? map->w - 1 : 0;
+	ret.y = ((map->p == 1 && map->w < 50) || map->w > 50) ? map->h - 1 : 0;
 	if (!map->touchy1 && can_i_go_up(*map->zone,
-				0, map, 0))
+				0, map, map->p))
 	{
 		ret.x = check_horiz_start(0, map);
-		ret.x += ret.x <= 0 ? map->w * 3 / 4 : 0;
+		ret.x = ret.x <= 0 ? map->w * 3 / 4 : 0;
 		ret.y = 0;
 	}
 	else if (!map->touchx2 && can_i_go_lr(*map->zone,
@@ -120,14 +115,14 @@ t_coord			position_down(t_map *map)
 	ret.x = ((map->p == 1 && map->w < 50) || map->w > 50) ? 0 : map->w - 1;
 	ret.y = ((map->p == 1 && map->w < 50) || map->w > 50) ? 0 : map->h - 1;
 	if (!map->touchy2 && can_i_go_up(*map->zone,
-				map->h - 1, map, 0))
+				map->h - 1, map, map->p))
 	{
 		ret.x = check_horiz_start(0, map);
 		ret.x += ret.x <= 0 ? map->w / 4 : 0;
 		ret.y = map->h - 1;
 	}
 	else if (!map->touchx1 && can_i_go_lr(*map->zone,
-				0, map, 0))
+				0, map, map->p))
 	{
 		ret.y = check_vert_start(0, map);
 		ret.y += ret.y <= 0 ? map->h * 3 / 4 : 0;

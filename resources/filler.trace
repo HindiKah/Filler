@@ -1,5 +1,6 @@
-seed = 969
-X: timedout
-players/superjeannot.filler won
+seed = 7449
+O: error on input
+../ybenoit.filler: Segfault at 1
+players/abanlin.filler won
 Score:
-1452AGAINST379
+1AGAINST143

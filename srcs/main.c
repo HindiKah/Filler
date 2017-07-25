@@ -6,7 +6,7 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 16:37:26 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/04/19 17:13:20 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/07/25 17:23:51 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int			main(void)
 		{
 			piece = init_piece(&line, piece);
 			piece->p = map->p;
+			resize_piece(piece);
 			check_touch(map);
 			map = nearest_to(map, piece, give_position(map));
 			print(map->zone->y, map->zone->x);

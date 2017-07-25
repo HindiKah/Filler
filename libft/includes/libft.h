@@ -6,7 +6,7 @@
 /*   By: ybenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:33:07 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/01/19 21:32:39 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/06/15 20:50:12 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct		s_list
 }					t_list;
 typedef	struct		s_gnl
 {
-			int		fd;
-			char	*buff;
+	int				fd;
+	char			*buff;
 }					t_gnl;
 
 size_t				ft_strlen_c(char *str, char c);

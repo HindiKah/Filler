@@ -6,14 +6,11 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 16:47:16 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/04/19 16:55:45 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/06/15 21:20:30 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
-
-int			else_up(t_coord start, int line, t_map *map, int p);
-int			else_lr(t_coord start, int line, t_map *map, int p);
 
 int			can_i_go_up(t_coord start, int line, t_map *map, int p)
 {

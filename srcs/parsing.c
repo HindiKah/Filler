@@ -6,16 +6,11 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:05:22 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/04/19 17:13:01 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/06/15 20:56:03 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
-
-int			**init_intab(int x, int y, int **tab, char **line);
-t_coord		*init_home(int y, int x);
-t_map		*check_home(t_map *map);
-t_map		*init_map_param(t_map *map, char **line);
 
 t_map		*init_playernmap(char **line, t_map *map)
 {

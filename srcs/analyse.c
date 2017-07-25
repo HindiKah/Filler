@@ -6,14 +6,11 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 16:38:38 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/04/19 16:47:09 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/07/25 15:26:22 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
-
-void			init_check_coord(t_coord *begin, t_coord *end, t_piece *piece,
-					t_coord coord);
 
 t_map			*nearest_to(t_map *map, t_piece *piece, t_coord dest)
 {

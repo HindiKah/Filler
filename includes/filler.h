@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   filler.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/15 20:52:24 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/07/25 17:22:19 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLER_H
 # define FILLER_H
 
@@ -9,7 +21,7 @@ typedef struct	s_coord
 	int			y;
 }				t_coord;
 
-typedef struct s_direction
+typedef struct	s_direction
 {
 	int			xr;
 	int			xl;
@@ -17,7 +29,7 @@ typedef struct s_direction
 	int			yu;
 }				t_direction;
 
-	typedef struct	s_map
+typedef struct	s_map
 {
 	char		player;
 	int			p;
@@ -34,7 +46,6 @@ typedef struct s_direction
 	int			**tab;
 }				t_map;
 
-
 typedef struct	s_piece
 {
 	int			h;
@@ -42,18 +53,20 @@ typedef struct	s_piece
 	int			p;
 	int			**form;
 	int			value;
+	int			ratio_x;
+	int			ratio_y;
 }				t_piece;
 
 t_map			*init_playernmap(char **line, t_map *map);
 t_piece			*init_piece(char **line, t_piece *piece);
 int				is_not_out(t_map *map, t_piece *piece, t_coord coord);
-int				add_tab_value(t_map *map,t_piece *piece, t_coord coord);
+int				add_tab_value(t_map *map, t_piece *piece, t_coord coord);
 int				p_can_enter(t_map *map, t_piece *piece, t_coord coord);
 int				can_iplace(t_map *map, t_piece *piece, t_coord coord);
 int				val_abs(int x);
 int				calc_prox(t_coord c1, t_coord c2);
 t_map			*nearest_to(t_map *map, t_piece *piece, t_coord dest);
-t_map			*go_to_vs(t_map *map, t_piece *piece,  t_coord coord);
+t_map			*go_to_vs(t_map *map, t_piece *piece, t_coord coord);
 t_direction		neighbour(t_coord coord, t_map *map);
 t_map			*check_zone(t_map *map, t_piece *piece, t_coord coord);
 t_map			*maj_tab(char **line, t_map *map);
@@ -70,9 +83,17 @@ int				touch_horiz(int c, t_map *map);
 int				touch_vert(int c, t_map *map);
 int				can_i_go_up(t_coord start, int line, t_map *map, int p);
 int				can_i_go_lr(t_coord start, int col, t_map *map, int p);
-
-
-
-void			debug(char *str);
-void			display_map(t_map *map);
+int				**init_intab(int x, int y, int **tab, char **line);
+t_coord			*init_home(int y, int x);
+t_map			*check_home(t_map *map);
+t_map			*init_map_param(t_map *map, char **line);
+t_coord			where_to_go(t_map *map);
+t_coord			give_start_position(t_map *map);
+t_coord			position_up(t_map *map);
+t_coord			position_down(t_map *map);
+void			init_check_coord(t_coord *begin, t_coord *end, t_piece *piece,
+				t_coord coord);
+int				else_up(t_coord start, int line, t_map *map, int p);
+int				else_lr(t_coord start, int line, t_map *map, int p);
+void			resize_piece(t_piece *piece);
 #endif
