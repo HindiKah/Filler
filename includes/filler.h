@@ -74,7 +74,7 @@ t_map			*nearest_to(t_map *map, t_piece *piece, t_coord dest);
 t_map			*go_to_vs(t_map *map, t_piece *piece, t_coord coord);
 t_direction		neighbour(t_coord coord, t_map *map);
 t_map			*check_zone(t_map *map, t_piece *piece, t_coord coord);
-t_map			*maj_tab(char **line, t_map *map);
+void			maj_tab(char **line, t_map *map);
 t_map			*init_upndown(t_map *map);
 t_map			*init_rightnleft(t_map *map);
 t_map			*init_touch(t_map *map);

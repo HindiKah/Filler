@@ -14,7 +14,6 @@
 
 t_map		*init_playernmap(char **line, t_map *map)
 {
-	map = (t_map*)malloc(sizeof(t_map));
 	get_next_line(0, line);
 	while (!ft_strstr(*line, "ybenoit"))
 	{
@@ -56,12 +55,10 @@ int			**init_intab(int x, int y, int **tab, char **line)
 
 	h = 0;
 	get_next_line(0, line);
-	tab = (int**)malloc(sizeof(int*) * 110);
 	while (h < y)
 	{
 		w = 0;
 		get_next_line(0, line);
-		tab[h] = (int*)malloc(sizeof(int) * 110);
 		while (w < x)
 		{
 			if (line[0][w + 4] == 'o' || line[0][w + 4] == 'O')
@@ -103,10 +100,7 @@ t_piece		*init_piece(char **line, t_piece *piece)
 	return (piece);
 }
 
-t_map		*maj_tab(char **line, t_map *map)
+void		maj_tab(char **line, t_map *map)
 {
-	if (map->tab)
-		free(map->tab);
 	map->tab = init_intab(map->w, map->h, map->tab, line);
-	return (map);
 }
