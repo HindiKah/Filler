@@ -1,6 +1,5 @@
-seed = 7449
-O: error on input
-../ybenoit.filler: Segfault at 1
+seed = 761
+X: error on input
 players/abanlin.filler won
 Score:
-1AGAINST143
+456AGAINST455

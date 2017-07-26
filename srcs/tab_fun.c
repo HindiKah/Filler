@@ -61,8 +61,9 @@ int			add_tab_value(t_map *map, t_piece *piece, t_coord coord)
 		x = coord.x;
 		while (x < coord.x + piece->w)
 		{
-			ret += (piece->form[y - coord.y][x - coord.x])
-				? val_abs(map->tab[y][x]) : 0;
+			ret += (piece->form[y - coord.y][x - coord.x] &&
+					map->tab[y][x] == piece->p)
+				? 1 : 0;
 			x++;
 		}
 		y++;

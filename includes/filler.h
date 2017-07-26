@@ -31,6 +31,7 @@ typedef struct	s_direction
 
 typedef struct	s_map
 {
+	int			error;
 	char		player;
 	int			p;
 	int			w;
@@ -52,9 +53,11 @@ typedef struct	s_piece
 	int			w;
 	int			p;
 	int			**form;
+	int			**resized;
 	int			value;
 	int			ratio_x;
 	int			ratio_y;
+	int			error;
 }				t_piece;
 
 t_map			*init_playernmap(char **line, t_map *map);
@@ -96,4 +99,6 @@ void			init_check_coord(t_coord *begin, t_coord *end, t_piece *piece,
 int				else_up(t_coord start, int line, t_map *map, int p);
 int				else_lr(t_coord start, int line, t_map *map, int p);
 void			resize_piece(t_piece *piece);
+int				**mem_intint(int y, int x);
+void			init_piece_zero(t_piece *piece);
 #endif

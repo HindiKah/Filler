@@ -84,16 +84,14 @@ t_piece		*init_piece(char **line, t_piece *piece)
 
 	y = 0;
 	if (!piece)
-		piece = (t_piece*)malloc(sizeof(t_piece));
+		return (NULL);
 	piece->value = 0;
 	piece->h = ft_atoi(*line + 6);
 	piece->w = ft_atoi(*line + 6 + ft_num_count(piece->h));
-	piece->form = (int**)malloc(sizeof(int*) * piece->h);
 	while (y < piece->h)
 	{
 		x = 0;
 		get_next_line(0, line);
-		piece->form[y] = (int*)malloc(sizeof(int) * piece->w);
 		while (x < piece->w)
 		{
 			piece->form[y][x] = (line[0][x] == '*') ? 1 : 0;
