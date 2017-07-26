@@ -14,27 +14,12 @@
 
 t_map		*init_upndown(t_map *map)
 {
-	int w;
-	int h;
-
-	h = 0;
-	while (h < map->h)
-	{
-		w = 0;
-		while (w < map->w)
-		{
-			if (map->tab[h][w] != 0)
-			{
-				if (map->tab[h][w] == map->p)
-					map->up_down = 1;
-				else
-					map->up_down = -1;
-				return (map);
-			}
-			w++;
-		}
-		h++;
-	}
+	if (map->player == 'o')
+		map->up_down = 1;
+	else
+		map->up_down = -1;
+	if (map->w > 50)
+		map->up_down = -map->up_down;
 	return (map);
 }
 

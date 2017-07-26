@@ -12,8 +12,11 @@ static void		first_y(t_piece *piece)
 		x = 0;
 		while (x < piece->w)
 		{
-			if (piece->form[y][x] && piece->ratio_y == -1)
+			if (piece->form[y][x])
+			{
 				piece->ratio_y = y;
+				return;
+			}
 			x++;
 		}
 		y++;
@@ -32,8 +35,11 @@ static void		first_x(t_piece *piece)
 		y = 0;
 		while (y < piece->h)
 		{
-			if (piece->form[y][x] && piece->ratio_x == -1)
-				piece->ratio_x = x;;
+			if (piece->form[y][x])
+			{
+				piece->ratio_x = x;
+				return;
+			}
 			y++;
 		}
 		x++;
@@ -99,9 +105,11 @@ void		resize_piece(t_piece *piece)
 		}
 		y++;
 	}
-	piece->h = piece->h - piece->ratio_y;
-	piece->w = piece->w - piece->ratio_x;
 	tmp = piece->form;
 	piece->form = piece->resized;
 	piece->resized = tmp;
+	last_x(piece);
+	last_y(piece);
+	piece->h = piece->ratio_ye + 1;
+	piece->w = piece->ratio_xe + 1;
 }

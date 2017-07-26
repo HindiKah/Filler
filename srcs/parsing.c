@@ -56,12 +56,12 @@ int			**init_intab(int x, int y, int **tab, char **line)
 
 	h = 0;
 	get_next_line(0, line);
-	tab = (int**)malloc(sizeof(int*) * (y));
+	tab = (int**)malloc(sizeof(int*) * 110);
 	while (h < y)
 	{
 		w = 0;
 		get_next_line(0, line);
-		tab[h] = (int*)malloc(sizeof(int) * x);
+		tab[h] = (int*)malloc(sizeof(int) * 110);
 		while (w < x)
 		{
 			if (line[0][w + 4] == 'o' || line[0][w + 4] == 'O')

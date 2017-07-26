@@ -14,7 +14,8 @@ SRC_BASE=main.c\
 		 analyse_map.c\
 		 give_position.c\
 		 search_way.c\
-		 resizing.c
+		 resizing.c\
+		 resizing2.c
 
 C_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE))
 O_FILE=$(addprefix $(SRCS_DIR)/,$(SRC_BASE:.c=.o))

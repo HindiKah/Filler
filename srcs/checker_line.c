@@ -20,7 +20,7 @@ int			check_horiz_start(int line, t_map *map)
 	ret = 0;
 	x = 0;
 	if (line > map->h - 1)
-		return (666);
+		return (-1);
 	while (x < map->w)
 	{
 		if (x - 1 >= 0 && !ret)
@@ -43,7 +43,7 @@ int			check_vert_start(int col, t_map *map)
 	ret = 0;
 	y = 0;
 	if (col > map->h - 1)
-		return (666);
+		return (-1);
 	while (y < map->h)
 	{
 		if (y - 1 >= 0 && !ret)
@@ -66,7 +66,7 @@ int			check_horiz_end(int line, t_map *map)
 	ret = 0;
 	x = map->w - 1;
 	if (line > map->h - 1)
-		return (666);
+		return (-1);
 	while (x > 0)
 	{
 		if (x + 1 < map->w && !ret)
@@ -89,7 +89,7 @@ int			check_vert_end(int col, t_map *map)
 	ret = 0;
 	y = map->h - 1;
 	if (col > map->h - 1)
-		return (666);
+		return (-1);
 	while (y > 0)
 	{
 		if (y + 1 < map->h && !ret)
@@ -106,9 +106,16 @@ int			check_vert_end(int col, t_map *map)
 
 t_map		*check_touch(t_map *map)
 {
+	map->touchx1 = 0;
+	map->touchx2 = 0;
+	map->touchy1 = 0;
+	map->touchy2 = 0;
 	map->touchx1 = touch_vert(0, map);
 	map->touchx2 = touch_vert(map->w - 1, map);
 	map->touchy1 = touch_horiz(0, map);
 	map->touchy2 = touch_horiz(map->h - 1, map);
+
+
+
 	return (map);
 }

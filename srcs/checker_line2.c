@@ -17,7 +17,7 @@ int		touch_horiz(int line, t_map *map)
 	int x;
 
 	x = 0;
-	if (line > map->w - 1 || line < 0)
+	if (line > map->h - 1 || line < 0)
 		return (666);
 	while (x < map->w)
 	{
@@ -33,7 +33,7 @@ int		touch_vert(int col, t_map *map)
 	int y;
 
 	y = 0;
-	if (col > map->h - 1 || col < 0)
+	if (col > map->w - 1 || col < 0)
 		return (666);
 	while (y < map->h)
 	{

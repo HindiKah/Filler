@@ -57,6 +57,8 @@ typedef struct	s_piece
 	int			value;
 	int			ratio_x;
 	int			ratio_y;
+	int			ratio_xe;
+	int			ratio_ye;
 	int			error;
 }				t_piece;
 
@@ -101,4 +103,6 @@ int				else_lr(t_coord start, int line, t_map *map, int p);
 void			resize_piece(t_piece *piece);
 int				**mem_intint(int y, int x);
 void			init_piece_zero(t_piece *piece);
+void			last_y(t_piece *piece);
+void			last_x(t_piece *piece);
 #endif

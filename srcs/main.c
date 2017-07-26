@@ -24,14 +24,14 @@ static void		print(int y, int x)
 	ft_putchar('\n');
 }
 
-void			print_tab(int **tab)
+void			print_tab(int **tab, int y1, int x1)
 {
 	int y = 0;
 
-	while (y < 50)
+	while (y < y1)
 	{
 		int x = 0;
-		while (x < 50)
+		while (x < x1)
 		{
 			dprintf(2, "%d ", tab[y][x]);
 			x++;
@@ -70,6 +70,7 @@ int				main(void)
 			map = maj_tab(&line, map);
 		if (line[0] == 'P' && line[1] == 'i')
 		{
+			init_piece_zero(piece);
 			piece = init_piece(&line, piece);
 			piece->p = map->p;
 			resize_piece(piece);
