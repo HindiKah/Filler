@@ -14,6 +14,7 @@
 # define FILLER_H
 
 # include "../libft/includes/libft.h"
+# include "../visu/includes/visu.h"
 
 typedef struct	s_coord
 {
