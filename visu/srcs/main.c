@@ -63,9 +63,12 @@ int				main(void)
 	while (get_next_line(0, &line) > 0)
 	{
 		if (line[0] == 'P' && line[1] == 'l')
+		{
 			env->tab = init_intab(env->tab_w, env->tab_h,
 					env->tab, &line);
-		draw_grid(env);
+			draw_grid(env);
+			mlx_do_sync(env->mlx_p);
+		}
 	}
 	mlx_loop(env->mlx_p);
 	return (0);

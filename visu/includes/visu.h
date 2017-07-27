@@ -7,6 +7,8 @@
 # define WIN_X 600
 # define WIN_Y 600
 # define EXIT 53
+# define PTR_MOTION_MASK (1L<<6)
+# define MOTION_NOTIFY 6
 
 typedef struct	s_env
 {
