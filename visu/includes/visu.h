@@ -30,5 +30,6 @@ int				key_fun(int k, t_env *e);
 void			put_pixel(t_env *env, int x, int y,
 					unsigned int color);
 void			draw_grid(t_env *env);
+void			winner(char *line, t_env *env);
 
 #endif

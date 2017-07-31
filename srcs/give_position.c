@@ -42,7 +42,7 @@ t_coord			give_start_position(t_map *map)
 {
 	t_coord		ret;
 
-	if (map->up_down && (ret.x = check_horiz_start(map->h - 1, map) >= 0) &&
+	if (map->up_down == 1 && (ret.x = check_horiz_start(map->h - 1, map) >= 0) &&
 			can_i_go_up(*map->zone, map->w - 1, map, 0))
 	{
 		ret.y = map->h - 1;
@@ -68,14 +68,14 @@ t_coord			where_to_go(t_map *map)
 {
 	t_coord		ret;
 
-	if (map->up_down && map->touchy2)
+	if (map->up_down == 1 && map->touchy2)
 		return (position_up(map));
 	else if (map->up_down == -1 && map->touchy1)
 		return (position_down(map));
 	else if (map->up_down == -1)
 	{
-		ret.x = (!map->touchy1) ? 0 : map->w - 1;
-		ret.y = (!map->touchy1) ? 0 : map->h / 2;
+		ret.x = (map->touchy1) ? map->w / 4 : 0;
+		ret.y = (map->touchy1) ? 0 : map->h / 3 * 4;
 	}
 	else
 	{
@@ -90,7 +90,7 @@ t_coord			position_up(t_map *map)
 	t_coord		ret;
 
 	ret.x = (map->touchx1) ? map->w * 3 / 4 : 0;
-	ret.y = map->h / 2;
+	ret.y = map->h / 4 * 3;
 	if (!map->touchy1 && can_i_go_up(*map->zone,
 				0, map, map->p))
 	{
@@ -118,8 +118,8 @@ t_coord			position_down(t_map *map)
 {
 	t_coord		ret;
 
-	ret.x = (map->touchx1) ? map->w / 2 : 0;
-	ret.y = map->h / 2;
+	ret.x = (map->touchx1) ? map->w / 4 : 0;
+	ret.y = (map->touchx1) ? map->h / 4 : 0;
 	if (!map->touchy2 && can_i_go_up(*map->zone,
 				map->h - 1, map, map->p))
 	{
@@ -137,8 +137,8 @@ t_coord			position_down(t_map *map)
 	if (map->touchy2 && map->touchx1 && map->touchy1 &&
 			map->touchx2)
 	{
-		ret.y = map->h / 2;
-		ret.x = map->w / 2;
+		ret.y = 0;
+		ret.x = 0;
 	}
 	return (ret);
 }

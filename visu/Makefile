@@ -25,7 +25,8 @@ SRC_DIR=srcs
 SRC_BASE=main.c\
 		init_n_maj.c\
 		key_fun.c\
-		drawer.c
+		drawer.c\
+		winner.c
 		
 OBJ_DIR=obj
 

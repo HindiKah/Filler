@@ -4,9 +4,9 @@
 static int		give_color(int player)
 {
 	if (player == 1)
-		return (0xFF0000);
+		return (0x00ff00);
 	else
-		return (0x0000FF);
+		return (0xff0000);
 }
 
 static void		draw_fullsquare(t_env *env, int x, int y, int p)
@@ -36,22 +36,22 @@ static void		draw_emptysquare(t_env *env, int x, int y)
 	j = 0;
 	while (j < env->ratio_y)
 	{
-		put_pixel(env, i + x, j + y, 0);
+		put_pixel(env, i + x, j + y, 0xFFA500);
 		j++;
 	}
 	while (i < env->ratio_x)
 	{
-		put_pixel(env, i + x, j + y, 0);
+		put_pixel(env, i + x, j + y, 0xFFA500);
 		i++;
 	}
 	while (j >= 0)
 	{
-		put_pixel(env, i + x, j + y, 0);
+		put_pixel(env, i + x, j + y, 0xFFA500);
 		j--;
 	}
 	while (i >= 0)
 	{
-		put_pixel(env, i + x, j + y, 0);
+		put_pixel(env, i + x, j + y, 0xFFA500);
 		i--;
 	}
 }

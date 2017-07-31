@@ -23,30 +23,11 @@ static t_env	*init_param(char **line, t_env *map)
 	map->tab_h = ft_atoi(*line + 7);
 	map->tab_w = ft_atoi(*line + ft_num_count(map->tab_h)
 			+ 8);
-	map->ratio_x = WIN_X / map->tab_w;
-	map->ratio_y = WIN_Y / map->tab_h;
+	map->ratio_x = 600 / map->tab_w;
+	map->ratio_y = 600 / map->tab_h;
 	map->tab = init_intab(map->tab_w, map->tab_h, map->tab,
 			line);
 	return (map);
-}
-
-void		print_tab(t_env *env)
-{
-	int i;
-	int j;
-
-	j = 0;
-	while (j < env->tab_h)
-	{
-		i = 0;
-		while (i < env->tab_w)
-		{
-			dprintf(2, "%d ", env->tab[j][i]);
-			i++;
-		}
-		j++;
-		dprintf(2, "\n");
-	}
 }
 
 int				main(void)
@@ -67,9 +48,12 @@ int				main(void)
 			env->tab = init_intab(env->tab_w, env->tab_h,
 					env->tab, &line);
 			draw_grid(env);
+			mlx_string_put(env->mlx_p, env->win, 10, 10, 0xFFFFFF, "Press ESC to exit");
 			mlx_do_sync(env->mlx_p);
 		}
 	}
+	mlx_string_put(env->mlx_p, env->win, 10, 10, 0xFFFFFF, "Press ESC to exit");
+	mlx_do_sync(env->mlx_p);
 	mlx_loop(env->mlx_p);
 	return (0);
 }
