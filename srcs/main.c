@@ -14,14 +14,21 @@
 
 static void		print(int y, int x)
 {
-	ft_putstr(ft_itoa(y));
-	ft_putstr_fd(ft_itoa(y), 2);
+	char *yc;
+	char *xc;
+
+	yc = ft_itoa(y);
+	xc = ft_itoa(x);
+	ft_putstr(yc);
+	ft_putstr_fd(yc, 2);
 	ft_putchar(' ');
 	ft_putchar_fd(' ', 2);
-	ft_putstr(ft_itoa(x));
-	ft_putstr_fd(ft_itoa(x), 2);
+	ft_putstr(xc);
+	ft_putstr_fd(xc, 2);
 	ft_putchar_fd('\n', 2);
 	ft_putchar('\n');
+	free(xc);
+	free(yc);
 }
 
 static void		init_all(t_map **map, char *line, t_piece **piece)
@@ -55,7 +62,7 @@ static void		cleaning(t_piece **piece, t_map **map)
 {
 	int i = 0;
 
-	while (i < 100)
+	while (i < 110)
 	{
 		free(map[0]->tab[i]);
 		free(piece[0]->form[i]);
@@ -65,6 +72,7 @@ static void		cleaning(t_piece **piece, t_map **map)
 	free(map[0]->tab);
 	free(piece[0]->form);
 	free(piece[0]->resized);
+	free(map[0]->zone);
 	free(*piece);
 	free(*map);
 }
@@ -83,11 +91,18 @@ int				main(void)
 	while (get_next_line(0, &line) > 0 && map && piece)
 	{
 		if (line[0] == 'P' && line[1] == 'l')
+		{
+			free(line);
 			maj_tab(&line, map);
+		}
 		if (line[0] == 'P' && line[1] == 'i')
+		{
+			free(line);
 			main_think(piece, map, line);
+		}
 		free(line);
 	}
+	free(line);
 	cleaning(&piece, &map);
 	return (0);
 }

@@ -1,5 +1,4 @@
-seed = 1238
-X: error on input
-../ybenoit.filler won
+seed = 8347
+valgrind --leak-check=full ../ybenoit.filler won
 Score:
-21AGAINST20
+90AGAINST79

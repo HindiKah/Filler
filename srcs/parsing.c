@@ -17,6 +17,7 @@ t_map		*init_playernmap(char **line, t_map *map)
 	get_next_line(0, line);
 	while (!ft_strstr(*line, "ybenoit"))
 	{
+		free(*line);
 		get_next_line(0, line);
 		sleep(1);
 	}
@@ -31,7 +32,11 @@ t_map		*init_playernmap(char **line, t_map *map)
 		map->player = 'x';
 	}
 	while (!ft_strstr(*line, "Plateau"))
+	{
+		free(*line);
 		get_next_line(0, line);
+	}
+	free(*line);
 	map = init_touch(map);
 	map = init_map_param(map, line);
 	return (map);
@@ -45,6 +50,7 @@ t_map		*init_map_param(t_map *map, char **line)
 	map->zone = (t_coord*)malloc(sizeof(t_coord));
 	map->zone->x = map->w / 2;
 	map->zone->y = map->h / 2;
+	free(*line);
 	return (map);
 }
 
@@ -58,6 +64,7 @@ int			**init_intab(int x, int y, int **tab, char **line)
 	while (h < y)
 	{
 		w = 0;
+		free(*line);
 		get_next_line(0, line);
 		while (w < x)
 		{
@@ -69,6 +76,7 @@ int			**init_intab(int x, int y, int **tab, char **line)
 				tab[h][w] = 0;
 			w++;
 		}
+		free(*line);
 		h++;
 	}
 	return (tab);
@@ -95,8 +103,10 @@ t_piece		*init_piece(char **line, t_piece *piece)
 			piece->value += piece->form[y][x];
 			x++;
 		}
+		free(*line);
 		y++;
 	}
+	free(line);
 	return (piece);
 }
 
