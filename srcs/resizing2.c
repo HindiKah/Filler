@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   resizing2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/02 14:44:16 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/08/02 16:34:03 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/filler.h"
 
 void	last_y(t_piece *piece)
@@ -15,7 +27,7 @@ void	last_y(t_piece *piece)
 			if (piece->form[y][x] && piece->ratio_ye == -1)
 			{
 				piece->ratio_ye = y;
-				return;
+				return ;
 			}
 			x++;
 		}
@@ -38,7 +50,7 @@ void	last_x(t_piece *piece)
 			if (piece->form[y][x] && piece->ratio_xe == -1)
 			{
 				piece->ratio_xe = x;
-				return;
+				return ;
 			}
 			y++;
 		}

@@ -6,7 +6,7 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 16:32:39 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/06/16 02:24:36 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/08/02 14:57:45 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ t_coord			give_start_position(t_map *map)
 {
 	t_coord		ret;
 
-	if (map->up_down == 1 && (ret.x = check_horiz_start(map->h - 1, map) >= 0) &&
+	if (map->up_down == 1 && (ret.x =
+				check_horiz_start(map->h - 1, map) >= 0) &&
 			can_i_go_up(*map->zone, map->w - 1, map, 0))
 	{
 		ret.y = map->h - 1;

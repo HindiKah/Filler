@@ -6,7 +6,7 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:01:35 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/04/19 17:04:30 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/08/02 14:43:31 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,5 @@ t_map		*check_touch(t_map *map)
 	map->touchx2 = touch_vert(map->w - 1, map);
 	map->touchy1 = touch_horiz(0, map);
 	map->touchy2 = touch_horiz(map->h - 1, map);
-
-
-
 	return (map);
 }

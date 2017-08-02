@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/02 15:01:35 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/08/02 15:02:30 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/filler.h"
 
 static t_env	*init_env(t_env *env)
@@ -7,7 +19,7 @@ static t_env	*init_env(t_env *env)
 	env->mlx_p = mlx_init();
 	env->img_p = mlx_new_image(env->mlx_p, WIN_X, WIN_Y);
 	env->data = (char*)mlx_get_data_addr(env->img_p,
-			&env->bpp, &env->size_l,  &env->endian);
+			&env->bpp, &env->size_l, &env->endian);
 	return (env);
 }
 
@@ -48,7 +60,8 @@ int				main(void)
 			env->tab = init_intab(env->tab_w, env->tab_h,
 					env->tab, &line);
 			draw_grid(env);
-			mlx_string_put(env->mlx_p, env->win, 10, 10, 0xFFFFFF, "Press ESC to exit");
+			mlx_string_put(env->mlx_p, env->win, 10, 10,
+					0xFFFFFF, "Press ESC to exit");
 			mlx_do_sync(env->mlx_p);
 		}
 	}

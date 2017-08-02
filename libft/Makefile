@@ -6,12 +6,12 @@
 #    By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/08 17:52:18 by ybenoit           #+#    #+#              #
-#    Updated: 2017/01/19 21:25:54 by ybenoit          ###   ########.fr        #
+#    Updated: 2017/08/02 16:15:46 by ybenoit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			gcc $(FLAGS)
-FLAGS=		-Wall -Wextra -Werror
+FLAGS=		-g -Wall -Wextra -Werror
 NAME=		libft.a
 INCLUDES=	./includes
 SRCS= 		ft_atoi.c\

@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_n_maj.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/02 15:02:38 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/08/02 15:03:31 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/filler.h"
 
 int				**mem_intint(int y, int x)
 {
 	int l;
+	int **to_alloc;
 
 	l = 0;
 	if (x <= 0 || y <= 0)
 		return (NULL);
-	int **to_alloc;
 	to_alloc = (int**)malloc(sizeof(int*) * y);
 	if (!to_alloc)
 		return (NULL);

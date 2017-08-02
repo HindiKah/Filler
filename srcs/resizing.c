@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   resizing.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/02 14:48:00 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/08/02 17:17:15 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/filler.h"
 
 static void		first_y(t_piece *piece)
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
 
 	y = 0;
 	piece->ratio_y = -1;
@@ -15,7 +27,7 @@ static void		first_y(t_piece *piece)
 			if (piece->form[y][x])
 			{
 				piece->ratio_y = y;
-				return;
+				return ;
 			}
 			x++;
 		}
@@ -25,8 +37,8 @@ static void		first_y(t_piece *piece)
 
 static void		first_x(t_piece *piece)
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
 
 	x = 0;
 	piece->ratio_x = -1;
@@ -38,17 +50,18 @@ static void		first_x(t_piece *piece)
 			if (piece->form[y][x])
 			{
 				piece->ratio_x = x;
-				return;
+				return ;
 			}
 			y++;
 		}
 		x++;
 	}
 }
+
 void			init_piece_zero(t_piece *piece)
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
 
 	x = 0;
 	while (x < 100)
@@ -66,12 +79,12 @@ void			init_piece_zero(t_piece *piece)
 
 int				**mem_intint(int y, int x)
 {
-	int l;
+	int		l;
+	int		**to_alloc;
 
 	l = 0;
 	if (x <= 0 || y <= 0)
 		return (NULL);
-	int **to_alloc;
 	to_alloc = (int**)malloc(sizeof(int*) * y);
 	if (!to_alloc)
 		return (NULL);
@@ -85,11 +98,11 @@ int				**mem_intint(int y, int x)
 	return (to_alloc);
 }
 
-void		resize_piece(t_piece *piece)
+void			resize_piece(t_piece *piece)
 {
-	int x;
-	int y;
-	int **tmp;
+	int		x;
+	int		y;
+	int		**tmp;
 
 	first_y(piece);
 	first_x(piece);

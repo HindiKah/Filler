@@ -1,7 +1,7 @@
 CC=gcc
 NAME=ybenoit.filler
 
-FLAGS= -Wall -Wextra -Werror
+FLAGS= -g -Wall -Wextra -Werror
 
 SRCS_DIR=srcs
 SRC_BASE=main.c\

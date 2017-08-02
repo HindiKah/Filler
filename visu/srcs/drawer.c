@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   drawer.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/02 14:58:45 by ybenoit           #+#    #+#             */
+/*   Updated: 2017/08/02 15:01:28 by ybenoit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/filler.h"
 #include "../includes/visu.h"
 
@@ -63,13 +75,13 @@ void			put_pixel(t_env *env, int x, int y, unsigned int c)
 	i = (x * 4) + (y * env->size_l);
 	if (i < 1440000)
 	{
-	env->data[i] = c;
-	env->data[++i] = c >> 8;
-	env->data[++i] = c >> 16;
+		env->data[i] = c;
+		env->data[++i] = c >> 8;
+		env->data[++i] = c >> 16;
 	}
 }
 
-void		draw_grid(t_env *env)
+void			draw_grid(t_env *env)
 {
 	int i;
 	int j;
@@ -82,16 +94,13 @@ void		draw_grid(t_env *env)
 		{
 			if (env->tab[j][i] == 1)
 			{
-				draw_fullsquare(env, i * env->ratio_x,
-						j * env->ratio_y, 1);
+				draw_fullsquare(env, i * env->ratio_x, j * env->ratio_y, 1);
 			}
 			else if (env->tab[j][i] == -1)
 			{
-				draw_fullsquare(env, i * env->ratio_x,
-						j * env->ratio_y, -1);
+				draw_fullsquare(env, i * env->ratio_x, j * env->ratio_y, -1);
 			}
-			draw_emptysquare(env, i * env->ratio_x,
-					j * env->ratio_y);
+			draw_emptysquare(env, i * env->ratio_x, j * env->ratio_y);
 			i++;
 		}
 		j++;

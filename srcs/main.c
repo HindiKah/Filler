@@ -6,7 +6,7 @@
 /*   By: ybenoit <ybenoit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 16:37:26 by ybenoit           #+#    #+#             */
-/*   Updated: 2017/07/25 17:23:51 by ybenoit          ###   ########.fr       */
+/*   Updated: 2017/08/02 17:17:11 by ybenoit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		print(int y, int x)
 static void		init_all(t_map **map, char *line, t_piece **piece)
 {
 	map[0] = (t_map*)malloc(sizeof(t_map));
-	map[0]->tab = mem_intint(110, 110);
+	map[0]->tab = mem_intint(100, 100);
 	*map = init_playernmap(&line, *map);
 	map[0]->error = 0;
 	*map = init_upndown(*map);
@@ -36,7 +36,37 @@ static void		init_all(t_map **map, char *line, t_piece **piece)
 	piece[0]->resized = mem_intint(100, 100);
 	init_piece_zero(*piece);
 	if (!*piece || !*map || !piece[0]->form || !piece[0]->resized)
-			map[0]->error = 1;
+		map[0]->error = 1;
+}
+
+static void		main_think(t_piece *piece, t_map *map, char *line)
+{
+	init_piece_zero(piece);
+	piece = init_piece(&line, piece);
+	piece->p = map->p;
+	resize_piece(piece);
+	check_touch(map);
+	map = nearest_to(map, piece, give_position(map));
+	print(map->zone->y - piece->ratio_y, map->zone->x -
+			piece->ratio_x);
+}
+
+static void		cleaning(t_piece **piece, t_map **map)
+{
+	int i = 0;
+
+	while (i < 100)
+	{
+		free(map[0]->tab[i]);
+		free(piece[0]->form[i]);
+		free(piece[0]->resized[i]);
+		i++;
+	}
+	free(map[0]->tab);
+	free(piece[0]->form);
+	free(piece[0]->resized);
+	free(*piece);
+	free(*map);
 }
 
 int				main(void)
@@ -48,27 +78,16 @@ int				main(void)
 	piece = NULL;
 	map = NULL;
 	line = NULL;
-	init_all(&map, line, &piece);
+	if (!map)
+		init_all(&map, line, &piece);
 	while (get_next_line(0, &line) > 0 && map && piece)
 	{
 		if (line[0] == 'P' && line[1] == 'l')
 			maj_tab(&line, map);
 		if (line[0] == 'P' && line[1] == 'i')
-		{
-			init_piece_zero(piece);
-			piece = init_piece(&line, piece);
-			piece->p = map->p;
-			resize_piece(piece);
-			check_touch(map);
-			map = nearest_to(map, piece, give_position(map));
-			print(map->zone->y - piece->ratio_y, map->zone->x - 
-				piece->ratio_x);
-		}
+			main_think(piece, map, line);
 		free(line);
 	}
-	free(piece->form);
-	free(piece->resized);
-	free(piece);
-	free(map);
+	cleaning(&piece, &map);
 	return (0);
 }
