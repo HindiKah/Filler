@@ -62,7 +62,7 @@ static void		cleaning(t_piece **piece, t_map **map)
 {
 	int i = 0;
 
-	while (i < 110)
+	while (i < 100)
 	{
 		free(map[0]->tab[i]);
 		free(piece[0]->form[i]);
@@ -100,7 +100,6 @@ int				main(void)
 			free(line);
 			main_think(piece, map, line);
 		}
-		free(line);
 	}
 	free(line);
 	cleaning(&piece, &map);

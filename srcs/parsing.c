@@ -50,7 +50,6 @@ t_map		*init_map_param(t_map *map, char **line)
 	map->zone = (t_coord*)malloc(sizeof(t_coord));
 	map->zone->x = map->w / 2;
 	map->zone->y = map->h / 2;
-	free(*line);
 	return (map);
 }
 
@@ -61,10 +60,10 @@ int			**init_intab(int x, int y, int **tab, char **line)
 
 	h = 0;
 	get_next_line(0, line);
+	free(*line);
 	while (h < y)
 	{
 		w = 0;
-		free(*line);
 		get_next_line(0, line);
 		while (w < x)
 		{
@@ -106,7 +105,6 @@ t_piece		*init_piece(char **line, t_piece *piece)
 		free(*line);
 		y++;
 	}
-	free(line);
 	return (piece);
 }
 

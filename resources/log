@@ -1,804 +1,675 @@
-==88428== Memcheck, a memory error detector
-==88428== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==88428== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==88428== Command: ../ybenoit.filler
-==88428== 
---88428-- run: /usr/bin/dsymutil "../ybenoit.filler"
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_atoi.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_isblank.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_isdigit.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_isspace.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_itoa.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_lstadd.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_lstnew.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_memcpy.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_memset.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_num_count.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_pow10.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_putchar.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_putchar_fd.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_putstr.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_putstr_fd.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strdup.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strlen.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strncpy.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strnew.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strstr.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(get_next_line.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strlen_c.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strdup_c.o) unable to open object file: No such file or directory
-warning: (x86_64) /Users/HindiKah/42/Filler_leaking/./libft/libft.a(ft_strndup.o) unable to open object file: No such file or directory
-==88428== Invalid write of size 8
-==88428==    at 0x10000328B: mem_intint (resizing.c:93)
-==88428==    by 0x10000290A: init_all (main.c:37)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b75210 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x10000290A: init_all (main.c:37)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 8
-==88428==    at 0x100003297: mem_intint (resizing.c:94)
-==88428==    by 0x10000290A: init_all (main.c:37)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b75210 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x10000290A: init_all (main.c:37)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003F8E: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DC2: init_map_param (parsing.c:47)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811a7 is 7 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FB4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DC2: init_map_param (parsing.c:47)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FC4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DC2: init_map_param (parsing.c:47)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004003: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DC2: init_map_param (parsing.c:47)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004016: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DC2: init_map_param (parsing.c:47)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x10000403F: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DC2: init_map_param (parsing.c:47)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003F8E: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DF4: init_map_param (parsing.c:48)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811aa is 10 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FB4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DF4: init_map_param (parsing.c:48)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FC4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DF4: init_map_param (parsing.c:48)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004003: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DF4: init_map_param (parsing.c:48)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004016: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DF4: init_map_param (parsing.c:48)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x10000403F: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x100002DF4: init_map_param (parsing.c:48)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002D69: init_playernmap (parsing.c:39)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002D55: init_playernmap (parsing.c:37)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002ECB: init_intab (parsing.c:67)
-==88428==    by 0x100002E1A: init_map_param (parsing.c:49)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b815b0 is 0 bytes inside a block of size 22 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002FC7: init_intab (parsing.c:79)
-==88428==    by 0x100002E1A: init_map_param (parsing.c:49)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002ED6: init_intab (parsing.c:68)
-==88428==    by 0x100002E1A: init_map_param (parsing.c:49)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002E70: init_map_param (parsing.c:53)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b834a0 is 0 bytes inside a block of size 22 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002FC7: init_intab (parsing.c:79)
-==88428==    by 0x100002E1A: init_map_param (parsing.c:49)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002ED6: init_intab (parsing.c:68)
-==88428==    by 0x100002E1A: init_map_param (parsing.c:49)
-==88428==    by 0x100002D83: init_playernmap (parsing.c:41)
-==88428==    by 0x100002925: init_all (main.c:38)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid write of size 8
-==88428==    at 0x10000328B: mem_intint (resizing.c:93)
-==88428==    by 0x100002972: init_all (main.c:42)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b83940 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x100002972: init_all (main.c:42)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 8
-==88428==    at 0x100003297: mem_intint (resizing.c:94)
-==88428==    by 0x100002972: init_all (main.c:42)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b83940 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x100002972: init_all (main.c:42)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid write of size 8
-==88428==    at 0x10000328B: mem_intint (resizing.c:93)
-==88428==    by 0x100002989: init_all (main.c:43)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b8f3b0 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x100002989: init_all (main.c:43)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 8
-==88428==    at 0x100003297: mem_intint (resizing.c:94)
-==88428==    by 0x100002989: init_all (main.c:43)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428==  Address 0x100b8f3b0 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x100002989: init_all (main.c:43)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003F8E: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000302C: init_piece (parsing.c:94)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FB4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000302C: init_piece (parsing.c:94)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FC4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000302C: init_piece (parsing.c:94)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004003: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000302C: init_piece (parsing.c:94)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004016: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000302C: init_piece (parsing.c:94)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x10000403F: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000302C: init_piece (parsing.c:94)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003F8E: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000305F: init_piece (parsing.c:95)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba7 is 7 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FB4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000305F: init_piece (parsing.c:95)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100003FC4: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000305F: init_piece (parsing.c:95)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004003: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000305F: init_piece (parsing.c:95)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004016: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000305F: init_piece (parsing.c:95)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x10000403F: ft_atoi (in ../ybenoit.filler)
-==88428==    by 0x10000305F: init_piece (parsing.c:95)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003122: init_piece (parsing.c:109)
-==88428==    by 0x100002A29: main_think (main.c:52)
-==88428==    by 0x1000028A2: main (main.c:101)
-==88428==  Address 0x104894998 is on thread 1's stack
-==88428==  in frame #2, created by main_think (main.c:50)
-==88428== 
+==90496== Memcheck, a memory error detector
+==90496== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90496== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90496== Command: ../ybenoit.filler
+==90496== 
+==90496== Invalid write of size 8
+==90496==    at 0x10000328B: mem_intint (resizing.c:93)
+==90496==    by 0x10000292A: init_all (main.c:37)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b75210 is 0 bytes after a block of size 800 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003245: mem_intint (resizing.c:88)
+==90496==    by 0x10000292A: init_all (main.c:37)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 8
+==90496==    at 0x100003297: mem_intint (resizing.c:94)
+==90496==    by 0x10000292A: init_all (main.c:37)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b75210 is 0 bytes after a block of size 800 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003245: mem_intint (resizing.c:88)
+==90496==    by 0x10000292A: init_all (main.c:37)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003F8E: ft_atoi (ft_atoi.c:22)
+==90496==    by 0x100002DE2: init_map_param (parsing.c:47)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811a7 is 7 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FB4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x100002DE2: init_map_param (parsing.c:47)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FC4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x100002DE2: init_map_param (parsing.c:47)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004003: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x100002DE2: init_map_param (parsing.c:47)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004016: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x100002DE2: init_map_param (parsing.c:47)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x10000403F: ft_atoi (ft_atoi.c:31)
+==90496==    by 0x100002DE2: init_map_param (parsing.c:47)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811a8 is 8 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003F8E: ft_atoi (ft_atoi.c:22)
+==90496==    by 0x100002E14: init_map_param (parsing.c:48)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811aa is 10 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FB4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x100002E14: init_map_param (parsing.c:48)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FC4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x100002E14: init_map_param (parsing.c:48)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004003: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x100002E14: init_map_param (parsing.c:48)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004016: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x100002E14: init_map_param (parsing.c:48)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x10000403F: ft_atoi (ft_atoi.c:31)
+==90496==    by 0x100002E14: init_map_param (parsing.c:48)
+==90496==    by 0x100002DA3: init_playernmap (parsing.c:41)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b811ab is 11 bytes inside a block of size 15 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002D89: init_playernmap (parsing.c:39)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002D75: init_playernmap (parsing.c:37)
+==90496==    by 0x100002945: init_all (main.c:38)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid write of size 8
+==90496==    at 0x10000328B: mem_intint (resizing.c:93)
+==90496==    by 0x100002992: init_all (main.c:42)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b83940 is 0 bytes after a block of size 800 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003245: mem_intint (resizing.c:88)
+==90496==    by 0x100002992: init_all (main.c:42)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 8
+==90496==    at 0x100003297: mem_intint (resizing.c:94)
+==90496==    by 0x100002992: init_all (main.c:42)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b83940 is 0 bytes after a block of size 800 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003245: mem_intint (resizing.c:88)
+==90496==    by 0x100002992: init_all (main.c:42)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid write of size 8
+==90496==    at 0x10000328B: mem_intint (resizing.c:93)
+==90496==    by 0x1000029A9: init_all (main.c:43)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b8f3b0 is 0 bytes after a block of size 800 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003245: mem_intint (resizing.c:88)
+==90496==    by 0x1000029A9: init_all (main.c:43)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 8
+==90496==    at 0x100003297: mem_intint (resizing.c:94)
+==90496==    by 0x1000029A9: init_all (main.c:43)
+==90496==    by 0x100002802: main (main.c:90)
+==90496==  Address 0x100b8f3b0 is 0 bytes after a block of size 800 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003245: mem_intint (resizing.c:88)
+==90496==    by 0x1000029A9: init_all (main.c:43)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003F8E: ft_atoi (ft_atoi.c:22)
+==90496==    by 0x10000303C: init_piece (parsing.c:93)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FB4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x10000303C: init_piece (parsing.c:93)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FC4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x10000303C: init_piece (parsing.c:93)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004003: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x10000303C: init_piece (parsing.c:93)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004016: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x10000303C: init_piece (parsing.c:93)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x10000403F: ft_atoi (ft_atoi.c:31)
+==90496==    by 0x10000303C: init_piece (parsing.c:93)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba6 is 6 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003F8E: ft_atoi (ft_atoi.c:22)
+==90496==    by 0x10000306F: init_piece (parsing.c:94)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba7 is 7 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FB4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x10000306F: init_piece (parsing.c:94)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100003FC4: ft_atoi (ft_atoi.c:24)
+==90496==    by 0x10000306F: init_piece (parsing.c:94)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004003: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x10000306F: init_piece (parsing.c:94)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004016: ft_atoi (ft_atoi.c:29)
+==90496==    by 0x10000306F: init_piece (parsing.c:94)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x10000403F: ft_atoi (ft_atoi.c:31)
+==90496==    by 0x10000306F: init_piece (parsing.c:94)
+==90496==    by 0x100002A49: main_think (main.c:52)
+==90496==    by 0x1000028C2: main (main.c:101)
+==90496==  Address 0x100b9aba8 is 8 bytes inside a block of size 11 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1000028B1: main (main.c:100)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
 8 2
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x1000028AB: main (main.c:103)
-==88428==  Address 0x100b9aba0 is 0 bytes inside a block of size 11 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002891: main (main.c:100)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002ECB: init_intab (parsing.c:67)
-==88428==    by 0x10000316E: maj_tab (parsing.c:115)
-==88428==    by 0x100002867: main (main.c:96)
-==88428==  Address 0x100b9b320 is 0 bytes inside a block of size 22 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002FC7: init_intab (parsing.c:79)
-==88428==    by 0x10000316E: maj_tab (parsing.c:115)
-==88428==    by 0x100002867: main (main.c:96)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002ED6: init_intab (parsing.c:68)
-==88428==    by 0x10000316E: maj_tab (parsing.c:115)
-==88428==    by 0x100002867: main (main.c:96)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x10000286C: main (main.c:98)
-==88428==  Address 0x100b9d210 is 0 bytes inside a block of size 22 free'd
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002FC7: init_intab (parsing.c:79)
-==88428==    by 0x10000316E: maj_tab (parsing.c:115)
-==88428==    by 0x100002867: main (main.c:96)
-==88428==  Block was alloc'd at
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004DAA: ft_strndup (in ../ybenoit.filler)
-==88428==    by 0x100004D45: ft_strdup_c (in ../ybenoit.filler)
-==88428==    by 0x100004BF7: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x100002ED6: init_intab (parsing.c:68)
-==88428==    by 0x10000316E: maj_tab (parsing.c:115)
-==88428==    by 0x100002867: main (main.c:96)
-==88428== 
-4 1
-10 2
+==90496== Invalid read of size 1
+==90496==    at 0x10000288C: main (main.c:98)
+==90496==  Address 0x100b9d210 is 0 bytes inside a block of size 22 free'd
+==90496==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100002FD7: init_intab (parsing.c:78)
+==90496==    by 0x10000316E: maj_tab (parsing.c:113)
+==90496==    by 0x100002887: main (main.c:96)
+==90496==  Block was alloc'd at
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004DAA: ft_strndup (ft_strndup.c:21)
+==90496==    by 0x100004D45: ft_strdup_c (ft_strdup_c.c:19)
+==90496==    by 0x100004BF7: get_next_line (get_next_line.c:68)
+==90496==    by 0x100002EE6: init_intab (parsing.c:67)
+==90496==    by 0x10000316E: maj_tab (parsing.c:113)
+==90496==    by 0x100002887: main (main.c:96)
+==90496== 
+8 3
+8 4
+8 5
+9 4
+10 4
 11 4
-12 5
 12 3
-12 7
-13 6
-12 8
-12 9
-11 10
-9 1
-12 10
-9 -1
-13 8
-12 12
-13 12
-10 9
-13 13
-13 5
-12 11
-13 10
-13 10
-12 15
-11 15
-11 15
-10 13
-9 13
-8 13
-9 14
-8 13
-7 14
-8 15
-14 13
-9 14
-9 16
-7 16
-6 16
-13 16
-5 16
-4 14
-3 12
-3 10
-2 12
-1 12
-1 10
-0 12
-7 2
-7 2
-9 3
-7 2
-3 9
-2 8
-2 8
-13 4
+12 4
 13 3
-2 6
-1 8
-1 9
-8 0
-7 0
+8 6
+8 7
+8 8
+7 8
+6 10
+5 10
+5 10
+5 10
+4 12
+3 11
+3 13
+3 13
+4 11
+2 12
 2 10
-9 0
+1 11
+0 12
+8 0
+8 1
+10 2
+9 1
+8 -1
+7 8
+6 7
+7 7
+6 6
+6 7
+5 8
+7 4
+5 7
+4 8
+6 4
+5 5
+4 9
+3 7
+3 8
+4 9
+6 4
+8 4
+5 5
+8 2
+7 2
+4 6
+3 9
+9 2
+3 7
+6 1
+2 8
+6 3
+5 3
+3 5
+12 1
+5 0
+1 6
+1 8
+5 13
+4 3
+10 0
+2 6
+0 8
 1 7
-0 9
+4 1
+4 15
+7 0
+3 2
+13 1
+1 8
+3 4
+11 0
+2 5
 1 6
 0 9
-0 8
-0 6
-10 2
-0 6
-4 13
-11 1
-10 1
-3 13
-2 13
-0 10
-4 15
-3 14
-13 3
-12 0
-2 13
-1 11
-13 0
-10 0
-1 14
-0 12
+3 0
 3 15
-13 2
+0 6
+2 12
+-1 9
+6 0
+3 3
+1 3
+2 1
+0 6
+13 0
+5 15
+2 0
+1 12
+0 5
+2 15
+0 13
 0 14
-0 -1
-==88428== Invalid read of size 1
-==88428==    at 0x100004788: ft_strlen (in ../ybenoit.filler)
-==88428==    by 0x1000046D4: ft_strdup (in ../ybenoit.filler)
-==88428==    by 0x100004C38: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428==  Address 0x100c7dbd1 is 0 bytes after a block of size 1 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004E6F: ft_strjoin_free (ft_strjoin_free.c:26)
-==88428==    by 0x100004B42: gnl_readoneline (in ../ybenoit.filler)
-==88428==    by 0x100004BCB: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 1
-==88428==    at 0x100004708: ft_strdup (in ../ybenoit.filler)
-==88428==    by 0x100004C38: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428==  Address 0x100c7dbd1 is 0 bytes after a block of size 1 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100004E6F: ft_strjoin_free (ft_strjoin_free.c:26)
-==88428==    by 0x100004B42: gnl_readoneline (in ../ybenoit.filler)
-==88428==    by 0x100004BCB: get_next_line (in ../ybenoit.filler)
-==88428==    by 0x1000027F2: main (main.c:91)
-==88428== 
-==88428== Invalid read of size 8
-==88428==    at 0x100002AF0: cleaning (main.c:67)
-==88428==    by 0x1000028C6: main (main.c:106)
-==88428==  Address 0x100b75210 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x10000290A: init_all (main.c:37)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 8
-==88428==    at 0x100002B0B: cleaning (main.c:68)
-==88428==    by 0x1000028C6: main (main.c:106)
-==88428==  Address 0x100b8f3b0 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x100002989: init_all (main.c:43)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid read of size 8
-==88428==    at 0x100002B26: cleaning (main.c:69)
-==88428==    by 0x1000028C6: main (main.c:106)
-==88428==  Address 0x100b83940 is 0 bytes after a block of size 800 alloc'd
-==88428==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100003245: mem_intint (resizing.c:88)
-==88428==    by 0x100002972: init_all (main.c:42)
-==88428==    by 0x1000027E2: main (main.c:90)
-==88428== 
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002AFB: cleaning (main.c:67)
-==88428==    by 0x1000028C6: main (main.c:106)
-==88428==  Address 0x360 is not stack'd, malloc'd or (recently) free'd
-==88428== 
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002B16: cleaning (main.c:68)
-==88428==    by 0x1000028C6: main (main.c:106)
-==88428==  Address 0x360 is not stack'd, malloc'd or (recently) free'd
-==88428== 
-==88428== Invalid free() / delete / delete[] / realloc()
-==88428==    at 0x10009F9F3: free (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x100002B31: cleaning (main.c:69)
-==88428==    by 0x1000028C6: main (main.c:106)
-==88428==  Address 0x360 is not stack'd, malloc'd or (recently) free'd
-==88428== 
-==88428== 
-==88428== HEAP SUMMARY:
-==88428==     in use at exit: 16,388 bytes in 169 blocks
-==88428==   total heap usage: 11,325 allocs, 12,713 frees, 297,398 bytes allocated
-==88428== 
-==88428== 72 bytes in 3 blocks are possibly lost in loss record 29 of 47
-==88428==    at 0x10009FC7A: calloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==88428==    by 0x1005CB89E: map_images_nolock (in /usr/lib/libobjc.A.dylib)
-==88428==    by 0x1005CB5C1: map_2_images (in /usr/lib/libobjc.A.dylib)
-==88428==    by 0x10000EF7B: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
-==88428==    by 0x10000F195: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
-==88428==    by 0x1002081DC: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
-==88428==    by 0x1005CB073: _objc_init (in /usr/lib/libobjc.A.dylib)
-==88428==    by 0x10019AE49: _os_object_init (in /usr/lib/system/libdispatch.dylib)
-==88428==    by 0x10019ADF6: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
-==88428==    by 0x1000ADA01: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
-==88428==    by 0x10001F75E: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==88428==    by 0x10001F961: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==88428== 
-==88428== LEAK SUMMARY:
-==88428==    definitely lost: 0 bytes in 0 blocks
-==88428==    indirectly lost: 0 bytes in 0 blocks
-==88428==      possibly lost: 72 bytes in 3 blocks
-==88428==    still reachable: 105 bytes in 5 blocks
-==88428==         suppressed: 16,211 bytes in 161 blocks
-==88428== Reachable blocks (those to which a pointer was found) are not shown.
-==88428== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==88428== 
-==88428== For counts of detected and suppressed errors, rerun with: -v
-==88428== ERROR SUMMARY: 3257 errors from 45 contexts (suppressed: 12 from 12)
+1 2
+0 2
+0 -2
+==90496== Invalid read of size 1
+==90496==    at 0x100004788: ft_strlen (ft_strlen.c:20)
+==90496==    by 0x1000046D4: ft_strdup (ft_strdup.c:20)
+==90496==    by 0x100004C38: get_next_line (get_next_line.c:70)
+==90496==    by 0x100002812: main (main.c:91)
+==90496==  Address 0x100c9be71 is 0 bytes after a block of size 1 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004E6F: ft_strjoin_free (ft_strjoin_free.c:26)
+==90496==    by 0x100004B42: gnl_readoneline (get_next_line.c:50)
+==90496==    by 0x100004BCB: get_next_line (get_next_line.c:66)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== Invalid read of size 1
+==90496==    at 0x100004708: ft_strdup (ft_strdup.c:24)
+==90496==    by 0x100004C38: get_next_line (get_next_line.c:70)
+==90496==    by 0x100002812: main (main.c:91)
+==90496==  Address 0x100c9be71 is 0 bytes after a block of size 1 alloc'd
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100004E6F: ft_strjoin_free (ft_strjoin_free.c:26)
+==90496==    by 0x100004B42: gnl_readoneline (get_next_line.c:50)
+==90496==    by 0x100004BCB: get_next_line (get_next_line.c:66)
+==90496==    by 0x100002812: main (main.c:91)
+==90496== 
+==90496== 
+==90496== HEAP SUMMARY:
+==90496==     in use at exit: 17,588 bytes in 172 blocks
+==90496==   total heap usage: 12,747 allocs, 12,575 frees, 317,509 bytes allocated
+==90496== 
+==90496== 72 bytes in 3 blocks are possibly lost in loss record 29 of 50
+==90496==    at 0x10009FC7A: calloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x1005CB89E: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==90496==    by 0x1005CB5C1: map_2_images (in /usr/lib/libobjc.A.dylib)
+==90496==    by 0x10000EF7B: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==90496==    by 0x10000F195: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==90496==    by 0x1002081DC: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==90496==    by 0x1005CB073: _objc_init (in /usr/lib/libobjc.A.dylib)
+==90496==    by 0x10019AE49: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==90496==    by 0x10019ADF6: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==90496==    by 0x1000ADA01: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90496==    by 0x10001F75E: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90496==    by 0x10001F961: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90496== 
+==90496== 400 bytes in 1 blocks are definitely lost in loss record 42 of 50
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003282: mem_intint (resizing.c:93)
+==90496==    by 0x10000292A: init_all (main.c:37)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== 400 bytes in 1 blocks are definitely lost in loss record 43 of 50
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003282: mem_intint (resizing.c:93)
+==90496==    by 0x100002992: init_all (main.c:42)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== 400 bytes in 1 blocks are definitely lost in loss record 44 of 50
+==90496==    at 0x10009F616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x100003282: mem_intint (resizing.c:93)
+==90496==    by 0x1000029A9: init_all (main.c:43)
+==90496==    by 0x100002802: main (main.c:90)
+==90496== 
+==90496== LEAK SUMMARY:
+==90496==    definitely lost: 1,200 bytes in 3 blocks
+==90496==    indirectly lost: 0 bytes in 0 blocks
+==90496==      possibly lost: 72 bytes in 3 blocks
+==90496==    still reachable: 105 bytes in 5 blocks
+==90496==         suppressed: 16,211 bytes in 161 blocks
+==90496== Reachable blocks (those to which a pointer was found) are not shown.
+==90496== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90496== 
+==90496== For counts of detected and suppressed errors, rerun with: -v
+==90496== ERROR SUMMARY: 1889 errors from 37 contexts (suppressed: 12 from 12)

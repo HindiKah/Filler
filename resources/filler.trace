@@ -1,4 +1,4 @@
-seed = 8347
+seed = 7605
 valgrind --leak-check=full ../ybenoit.filler won
 Score:
-90AGAINST79
+102AGAINST41
